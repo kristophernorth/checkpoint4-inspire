@@ -62,16 +62,16 @@
     <section class="container-fluid">
       <div class="row justify-content-between">
         <div class="col-md-9">Image info</div>
-        <div class="col-md-3 text-end border border-dark" id="todo-count">0 <span>todos remaining</span>
+        <div class="col-md-3 text-end border border-dark"><span id="todo-count">0 </span><span>todos remaining</span>
           <form onsubmit="app.TodosController.createTodo()" class=" m-2sticky-top">
             <div class="mb-3">
               <label for="togo" class="form-label"></label>
-              <input type="text" class="form-control" name="todo" id="tag" required maxlength="120"
+              <input type="text" class="form-control" name="description" id="tag" required maxlength="120"
                 placeholder="add todo">
               <button class="btn btn-primary">+</button>
             </div>
           </form>
-          <div class="todos">
+          <div id="todos">
 
           </div>
         </div>

@@ -8,8 +8,9 @@ import { setHTML } from "../utils/Writer.js";
 export class TodosController {
   constructor() {
     console.log('todos are here');
-    AppState.on('account', this.getTodos)
     AppState.on('todos', this.drawTodos)
+    AppState.on('account', this.getTodos)
+    AppState.on('account', this.drawTodos)
   }
 
   async createTodo() {
