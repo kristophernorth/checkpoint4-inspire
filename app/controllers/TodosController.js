@@ -49,7 +49,12 @@ export class TodosController {
     let htmlContent = ''
     todos.forEach(todo => htmlContent += todo.todoListItem)
     setHTML('todos', htmlContent)
-    // document.body.style.backgroundImage = `url(${AppState.activeApod.imgUrl})`
+
+    const todoCountElm = document.getElementById('todo-count')
+    todoCountElm.innerText = AppState.todos.length.toString()
   }
 
 }
+
+
+// document.body.style.backgroundImage = `url(${AppState.activeApod.imgUrl})`

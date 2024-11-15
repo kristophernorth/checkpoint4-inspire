@@ -28,6 +28,14 @@ class TodosService {
     AppState.todos.splice(todoIndex, 1)
   }
 
+  // async updateTodoStatus(todoId) {
+  //   if
+  //   const todoData = {completed : true}
+  //   const response = await api.put(`api/todos/${todoId}`, todoData)
+  //   console.log('saved todo status', response.data);
+  //   const 
+  // } 
+
 }
 
 export const todosService = new TodosService()
