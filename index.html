@@ -62,7 +62,7 @@
     <section class="container-fluid">
       <div class="row justify-content-between">
         <div class="col-md-9">Image info</div>
-        <div class="col-md-3 text-end border border-dark"><span id="todo-count">0 </span><span>todos remaining</span>
+        <div class="col-md-3 text-end border border-dark"><span id="todo-count">0</span> <span>todos remaining</span>
           <form onsubmit="app.TodosController.createTodo()" class=" m-2sticky-top">
             <div class="mb-3">
               <label for="togo" class="form-label"></label>
@@ -84,12 +84,12 @@
 
   <!-- SECTION -->
   <footer class="container-fluid">
-    <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center">
-      <p>Quote</p>
-      <p>Author</p>
+    <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center" id="quote">
+      <!-- NOTE - Quote section -->
+
     </div>
     <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center">
-      <div class="col-md-2">Weather</div>
+      <div class="col-md-2" id="weather">0</div>
       <div class="col-md-4">Time</div>
       <div class="col-md-2">Greeting</div>
     </div>

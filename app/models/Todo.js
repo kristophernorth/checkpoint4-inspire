@@ -11,17 +11,7 @@ export class Todo {
 
   get todoListItem() {
     return `
-      <p><span>${this.completedCheckbox}</span><span>${this.description}</span><span>${this.deleteButton}</span></p>
-    `
-  }
-
-
-  get completedCheckbox() {
-    return `
-      <form onsubmit"app.TodosController.updateTodoStatus()">
-        <input type="checkbox" name="todo" value="${this.completed}">
-        <label for="todo"></label>
-      </form>
+      <p><input onchange="app.TodosController.checkedTodo('${this.id}')" type="checkbox"> <span>${this.description}</span><span>${this.deleteButton}</span></p>
     `
   }
 
@@ -32,9 +22,10 @@ export class Todo {
     `
   }
 
-
-
-
+  // get isChecked() {
+  //   if (this.completed) return 'checked'
+  //   return ''
+  // }
 
 
 }

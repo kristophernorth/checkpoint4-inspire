@@ -11,7 +11,6 @@ class TodosService {
     const todos = response.data.map(todoData => new Todo(todoData))
     AppState.todos = todos
     console.log(AppState.todos);
-
   }
 
   async createTodo(formData) {
@@ -28,14 +27,20 @@ class TodosService {
     AppState.todos.splice(todoIndex, 1)
   }
 
-  // async updateTodoStatus(todoId) {
-  //   if
-  //   const todoData = {completed : true}
-  //   const response = await api.put(`api/todos/${todoId}`, todoData)
-  //   console.log('saved todo status', response.data);
-  //   const 
-  // } 
+  async checkedTodo(todoId) {
+    // const response = await api.put(`api/todos/${todoId}`)
+    console.log('checked todo', todoId);
+    const todoToUpdate = AppState.todos.find(todo => todo.id == todoId)
+    console.log('checkbox is updated', todoToUpdate);
+
+    todoToUpdate.completed != todoToUpdate.completed
+
+    const response = await api.put(`api/todos/${todoId}`, todoToUpdate)
+    console.log('updated', response.data);
+    AppState.emit('todos')
+  }
 
 }
+
 
 export const todosService = new TodosService()

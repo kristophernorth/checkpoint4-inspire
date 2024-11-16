@@ -35,6 +35,16 @@ export class TodosController {
     }
   }
 
+  async checkedTodo(todoId) {
+    try {
+      console.log('checked todo', todoId);
+      todosService.checkedTodo(todoId)
+    } catch (error) {
+      console.error(error);
+      Pop.toast("Couldn't update todo status")
+    }
+  }
+
   async deleteTodo(todoId) {
     try {
       const wantsToDelete = await Pop.confirm('Are you 100% sure you want to delete this todo', 'It will be gone and never to be seen again!')
@@ -56,6 +66,3 @@ export class TodosController {
   }
 
 }
-
-
-// document.body.style.backgroundImage = `url(${AppState.activeApod.imgUrl})`
