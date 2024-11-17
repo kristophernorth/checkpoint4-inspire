@@ -1,16 +1,21 @@
 import { AppState } from "../AppState.js";
 import { imagesService } from "../services/ImagesService.js";
 import { Pop } from "../utils/Pop.js";
+import { setHTML } from "../utils/Writer.js";
 
 
 export class ImagesController {
   constructor() {
-    this.drawImage()
+    this.getImage()
+    AppState.on('image', this.drawImage)
+    // AppState.on('todos', this.drawImage)
+    // AppState.on('account', this.getImage)
+    // AppState.on('account', this.drawImage)
   }
 
-  async getImages() {
+  async getImage() {
     try {
-      await imagesService.getImages
+      await imagesService.getImage()
     } catch (error) {
       Pop.error(error)
       console.error(error);
@@ -18,7 +23,11 @@ export class ImagesController {
   }
 
   drawImage() {
-    document.body.style.backgroundImage = `url(${AppState.images.imgUrl})`
+    const images = AppState.images
+    let htmlContent = ''
+    images.forEach(image => htmlContent += image.imageAuthorTemplate)
+    setHTML('image-info', htmlContent)
+    document.body.style.backgroundImage = `url(${AppState.images})`
   }
 
 }
@@ -32,7 +41,4 @@ export class ImagesController {
 
 //     const todoCountElm = document.getElementById('todo-count')
 //     todoCountElm.innerText = AppState.todos.length.toString()
-//   }
-
-//   document.body.style.backgroundImage = `url(${AppState.activeApod.imgUrl})`
-// }
+//

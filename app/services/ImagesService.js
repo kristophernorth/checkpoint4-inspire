@@ -1,14 +1,15 @@
 import { AppState } from "../AppState.js";
+import { Image } from "../models/Image.js";
 import { api } from "./AxiosService.js";
 
 
 class ImagesService {
 
-  async getImages() {
+  async getImage() {
     const response = await api.get('api/images')
     console.log('got images', response.data);
-    const images = response.data.map(imageData => new Image(imageData))
-    AppState.images = images
+    const image = new Image(response.data)
+    AppState.image = image
     console.log(AppState.images);
   }
 

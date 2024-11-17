@@ -61,7 +61,11 @@
   <main>
     <section class="container-fluid">
       <div class="row justify-content-between">
-        <div class="col-md-9">Image info</div>
+        <div class="col-md-9" id="image-info">
+          <!-- NOTE  - image attribute -->
+          <!-- <p>Image by</p>
+          <p>Image author</p> -->
+        </div>
         <div class="col-md-3 text-end border border-dark"><span id="todo-count">0</span> <span>todos remaining</span>
           <form onsubmit="app.TodosController.createTodo()" class=" m-2sticky-top">
             <div class="mb-3">
@@ -90,8 +94,19 @@
     </div>
     <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center">
       <div class="col-md-2" id="weather">0</div>
-      <div class="col-md-4">Time</div>
-      <div class="col-md-2">Greeting</div>
+      <div class="col-md-4" id="time">00:00</div>
+      <script>
+        function displayTime() {
+          const timeElement = document.getElementById("time");
+          const currentTime = new Date();
+          const formattedTime = currentTime.toLocaleTimeString();
+
+          timeElement.textContent = formattedTime;
+        }
+        setInterval(displayTime, 1000); 
+      </script>
+
+      <div class="col-md-2">Greetings person</div>
     </div>
   </footer>
 

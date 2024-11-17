@@ -7,6 +7,11 @@ export class Image {
     this.query = data.query
   }
 
-
+  get imageAuthorTemplate() {
+    return `
+      <p>Image by</p>
+      <p>${this.author}</p>
+  `
+  }
 
 }

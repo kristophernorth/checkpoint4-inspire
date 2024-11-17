@@ -9,9 +9,16 @@ export class Quote {
 
   get quoteTemplate() {
     return `
-  <p>${this.quote}</p>
-  <p>${this.author}</p>
-  `
+    <div id="to-hover">
+        <p>${this.quote}</p>
+        <p id="to-show">${this.author}</p>
+      </div>
+      `
   }
 
 }
+
+
+
+// <p>${this.quote}</p>
+// <p class="to-show">${this.author}</p>

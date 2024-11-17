@@ -5,6 +5,10 @@ import { setHTML } from "../utils/Writer.js";
 
 
 export class WeathersController {
+  constructor() {
+    AppState.on('weather', this.getWeather)
+    AppState.on('weather', this.drawWeather)
+  }
 
   async getWeather() {
     try {
@@ -16,7 +20,7 @@ export class WeathersController {
   }
 
 
-  drawWeathers() {
+  drawWeather() {
     const weathers = AppState.weathers
     let htmlContent = ''
     weathers.forEach(weather => htmlContent += weather.temperatureTemplate)

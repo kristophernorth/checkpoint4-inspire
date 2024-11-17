@@ -3,7 +3,8 @@ import { Quote } from "../models/Quote.js";
 import { api } from "./AxiosService.js";
 
 
-export class QuotesService {
+class QuotesService {
+
   async getQuotes() {
     const response = await api.get('api/quotes')
     console.log('got quotes', response.data);

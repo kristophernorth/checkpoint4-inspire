@@ -23,9 +23,6 @@ class ObservableAppState extends EventEmitter {
   /** @type {Quote[]} */
   quotes = []
 
-  //  /** @type {MyTodo[]} */
-  //  myTodos = []
-
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
