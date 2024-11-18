@@ -21,3 +21,11 @@
 #to-hover:hover>#to-show {
   display: block;
 }
+
+/* NOTE - look at nasa lecture for styling the body / image as well as having the quote display on hover */
+/* Weather toggling, leave that one for last */
+
+body {
+  background-size: cover;
+  background-position: center;
+}

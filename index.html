@@ -66,10 +66,11 @@
           <!-- <p>Image by</p>
           <p>Image author</p> -->
         </div>
-        <div class="col-md-3 text-end border border-dark"><span id="todo-count">0</span> <span>todos remaining</span>
+        <div class="col-md-3 text-end bg-light border border-dark"><span id="todo-count">0</span> <span>todos
+            remaining</span>
           <form onsubmit="app.TodosController.createTodo()" class=" m-2sticky-top">
             <div class="mb-3">
-              <label for="togo" class="form-label"></label>
+              <label for="todo" class="form-label"></label>
               <input type="text" class="form-control" name="description" id="tag" required maxlength="120"
                 placeholder="add todo">
               <button class="btn btn-primary">+</button>
@@ -90,7 +91,10 @@
   <footer class="container-fluid">
     <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center" id="quote">
       <!-- NOTE - Quote section -->
-
+      <!-- <div id="to-hover">
+        <p>${this.quote}</p>
+        <p id="to-show">${this.author}</p>
+      </div> -->
     </div>
     <div class="row text-bg-dark mb-5 d-flex justify-content-around text-center">
       <div class="col-md-2" id="weather">0</div>

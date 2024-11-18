@@ -8,9 +8,10 @@ class WeathersService {
   async getWeathers() {
     const response = await api.get('api/weather')
     console.log('got weather', response.data);
-    const weathers = response.data.map(weatherData => new Weather(weatherData))
-    AppState.weathers = weathers
-    console.log(AppState.weathers);
+    const weather = new Weather(response.data)
+    // const image = new Image(response.data)
+    AppState.weather = weather
+    console.log(AppState.weather);
   }
 
 }

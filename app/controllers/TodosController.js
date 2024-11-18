@@ -2,7 +2,7 @@ import { AppState } from "../AppState.js";
 import { todosService } from "../services/TodosService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
-import { setHTML } from "../utils/Writer.js";
+import { setHTML, setText } from "../utils/Writer.js";
 
 
 export class TodosController {
@@ -60,9 +60,11 @@ export class TodosController {
     let htmlContent = ''
     todos.forEach(todo => htmlContent += todo.todoListItem)
     setHTML('todos', htmlContent)
+    // const todoCountElm = document.getElementById('todo-count')
+    // // NOTE - make sure we count the uncompleted todos - spellbook
+    // todoCountElm.innerText = AppState.todos.length.toString()
 
-    const todoCountElm = document.getElementById('todo-count')
-    todoCountElm.innerText = AppState.todos.length.toString()
+    let todoCountElm = AppState.todos.filter(todo => todo.completed == false)
+    setText('todo-count', `${todoCountElm.length}`)
   }
-
 }

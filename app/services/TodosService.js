@@ -32,8 +32,8 @@ class TodosService {
     console.log('checked todo', todoId);
     const todoToUpdate = AppState.todos.find(todo => todo.id == todoId)
     console.log('checkbox is updated', todoToUpdate);
-
-    todoToUpdate.completed != todoToUpdate.completed
+    // NOTE - we aren't actually changing data here - spellbook - prepare spell - line below is potentially the issue
+    todoToUpdate.completed = !todoToUpdate.completed
 
     const response = await api.put(`api/todos/${todoId}`, todoToUpdate)
     console.log('updated', response.data);

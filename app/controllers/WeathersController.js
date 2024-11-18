@@ -6,7 +6,7 @@ import { setHTML } from "../utils/Writer.js";
 
 export class WeathersController {
   constructor() {
-    AppState.on('weather', this.getWeather)
+    this.getWeather()
     AppState.on('weather', this.drawWeather)
   }
 
@@ -19,11 +19,9 @@ export class WeathersController {
     }
   }
 
-
   drawWeather() {
-    const weathers = AppState.weathers
+    const weathers = AppState.weather
     let htmlContent = ''
-    weathers.forEach(weather => htmlContent += weather.temperatureTemplate)
     setHTML('weather', htmlContent)
   }
 

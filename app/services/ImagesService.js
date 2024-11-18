@@ -10,7 +10,7 @@ class ImagesService {
     console.log('got images', response.data);
     const image = new Image(response.data)
     AppState.image = image
-    console.log(AppState.images);
+    console.log(AppState.image);
   }
 
 }

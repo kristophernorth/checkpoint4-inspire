@@ -4,6 +4,8 @@
 export class Weather {
   constructor(data) {
     this.temp = data.main.temp
+    // this.fahrenheit = data.temp((${ this.temp } - 273.15) * 9 / 5 + 32))
+
     // this.name = data.name
     // this.weather = data.weather
     // this.description = data.weather..description
@@ -13,6 +15,7 @@ export class Weather {
   get temperatureTemplate() {
     return this.temp ? this.tempF : this.tempC
   }
+
 
   get tempF() {
     return `
@@ -27,3 +30,6 @@ export class Weather {
   }
 
 }
+
+
+// NOTE need a boolean to toggle C and F

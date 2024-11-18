@@ -6,7 +6,8 @@ import { setHTML } from "../utils/Writer.js";
 
 export class QuotesController {
   constructor() {
-    this.drawQuotes
+    this.getQuotes()
+    AppState.on('quote', this.drawQuotes)
   }
 
   async getQuotes() {
@@ -19,9 +20,8 @@ export class QuotesController {
   }
 
   drawQuotes() {
-    const quotes = AppState.quotes
+    const quotes = AppState.quote
     let htmlContent = ''
-    quotes.forEach(quote => htmlContent += quote.quoteTemplate)
     setHTML('quote', htmlContent)
   }
 

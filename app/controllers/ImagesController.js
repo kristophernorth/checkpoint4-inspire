@@ -8,9 +8,6 @@ export class ImagesController {
   constructor() {
     this.getImage()
     AppState.on('image', this.drawImage)
-    // AppState.on('todos', this.drawImage)
-    // AppState.on('account', this.getImage)
-    // AppState.on('account', this.drawImage)
   }
 
   async getImage() {
@@ -23,22 +20,10 @@ export class ImagesController {
   }
 
   drawImage() {
-    const images = AppState.images
+    const images = AppState.image
     let htmlContent = ''
-    images.forEach(image => htmlContent += image.imageAuthorTemplate)
     setHTML('image-info', htmlContent)
-    document.body.style.backgroundImage = `url(${AppState.images})`
+    document.body.style.backgroundImage = `url(${AppState.image.imgUrl})`
   }
 
 }
-
-
-//   drawTodos() {
-//     const todos = AppState.todos
-//     let htmlContent = ''
-//     todos.forEach(todo => htmlContent += todo.todoListItem)
-//     setHTML('todos', htmlContent)
-
-//     const todoCountElm = document.getElementById('todo-count')
-//     todoCountElm.innerText = AppState.todos.length.toString()
-//

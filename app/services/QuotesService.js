@@ -8,9 +8,9 @@ class QuotesService {
   async getQuotes() {
     const response = await api.get('api/quotes')
     console.log('got quotes', response.data);
-    const quotes = response.data.map(quoteData => new Quote(quoteData))
-    AppState.quotes = quotes
-    console.log(AppState.quotes);
+    const quotes = new Quote(response.Data)
+    AppState.quote = quotes
+    console.log(AppState.quote);
   }
 }
 
